@@ -1,58 +1,61 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
+# My Reading List
+## About the Project
+My Reading List is a simple web application built using Laravel to keep track of books I want to read and the books I am currently reading.
+The main idea behind this project is to have one place where I can manage my reading list without needing to maintain it manually. Users can add new books, update their details, delete books they no longer want in the list, and filter books based on their reading status.
+## Features
+- **Add Books:** Add a book by entering its title, author, and reading status.
+- **View Books:** See all the books added to the reading list.
+- **Edit Books:** Update the details or reading status of an existing book.
+- **Delete Books:** Remove a book from the list with a confirmation message.
+- **Filter Books:** View books based on their status – All, To Read, Reading, or Finished.
+## Technologies Used
+- **PHP** – For backend development.
+- **Laravel** – PHP framework used to build the application.
+- **SQLite** – Used to store book details.
+- **HTML** – For creating the web page structure.
+- **Git and GitHub** – For version control and maintaining the project.
+## How to Run the Project
+Follow these steps to run the project on your local machine.
+### 1. Clone the Repository
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone YOUR_GITHUB_REPOSITORY_URL
 ```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 2. Open the Project Folder
+```bash
+cd reading-list
+```
+### 3. Install Dependencies
+```bash
+composer install
+```
+### 4. Set Up the Environment File
+For Windows:
+```bash
+copy .env.example .env
+```
+### 5. Generate the Application Key
+```bash
+php artisan key:generate
+```
+### 6. Run Database Migrations
+```bash
+php artisan migrate
+```
+This creates the required database tables for storing book information.
+### 7. Start the Application
+```bash
+php artisan serve
+```
+Open the local URL displayed in your terminal to access the application.
+## AI Usage
+During the development of this project, I used ChatGPT and claude as a learning and debugging assistant. Since I am still learning Laravel, I took help from ChatGPT to understand some concepts and implement different features.
+Some of the ways I used AI were:
+- Understanding how Laravel routes, controllers, models, and migrations work.
+- Getting explanations of database configuration and how book details are stored.
+- Taking guidance while implementing the add, edit, and delete functionalities.
+- Understanding how form validation works in Laravel.
+- Getting help with implementing the book status filters.
+- Finding and fixing errors encountered during development.
+- Understanding Git commands and maintaining the project on GitHub.
+I followed the steps, made changes to the code, and tested the features while building the project. This project also helped me get a better understanding of how a basic Laravel application works.
