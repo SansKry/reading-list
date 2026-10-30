@@ -1,5 +1,6 @@
 
 
+
 @section('content')
 
 <h1>Add a Book</h1>
@@ -40,4 +41,7 @@
 </form>
 
 <a href="{{ route('books.index') }}">Back to Books</a>
+
+
+
 

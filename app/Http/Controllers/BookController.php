@@ -7,24 +7,23 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $books = Book::all();
+        $status = $request->query('status');
 
-        return view('books.index', compact('books'));
+        if ($status) {
+            $books = Book::where('status', $status)->get();
+        } else {
+            $books = Book::all();
+        }
+
+        return view('books.index', compact('books', 'status'));
     }
 
     public function create()
     {
         return view('books.create');
     }
-
-    public function destroy(Book $book)
-{
-    $book->delete();
-
-    return redirect()->route('books.index');
-}
 
     public function store(Request $request)
     {
@@ -53,6 +52,13 @@ class BookController extends Controller
         ]);
 
         $book->update($validated);
+
+        return redirect()->route('books.index');
+    }
+
+    public function destroy(Book $book)
+    {
+        $book->delete();
 
         return redirect()->route('books.index');
     }

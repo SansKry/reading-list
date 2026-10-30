@@ -9,7 +9,17 @@
 
     <a href="{{ route('books.create') }}">Add Book</a>
 
+    <br><br>
+
+    <a href="{{ route('books.index') }}">All</a> |
+    <a href="{{ route('books.index', ['status' => 'to_read']) }}">To Read</a> |
+    <a href="{{ route('books.index', ['status' => 'reading']) }}">Reading</a> |
+    <a href="{{ route('books.index', ['status' => 'finished']) }}">Finished</a>
+
+    <br><br>
+
     @forelse($books as $book)
+
         <div>
             <h3>{{ $book->title }}</h3>
             <p>Author: {{ $book->author }}</p>
@@ -26,7 +36,9 @@
                 </button>
             </form>
         </div>
+
         <hr>
+
     @empty
         <p>No books added yet.</p>
     @endforelse
