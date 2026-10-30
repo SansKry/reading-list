@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>My Reading List</title>
@@ -13,7 +14,10 @@
             <h3>{{ $book->title }}</h3>
             <p>Author: {{ $book->author }}</p>
             <p>Status: {{ $book->status }}</p>
+
+            <a href="{{ route('books.edit', ['book' => $book->id]) }}">Edit</a>
         </div>
+        <hr>
     @empty
         <p>No books added yet.</p>
     @endforelse
