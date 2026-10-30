@@ -19,6 +19,13 @@ class BookController extends Controller
         return view('books.create');
     }
 
+    public function destroy(Book $book)
+{
+    $book->delete();
+
+    return redirect()->route('books.index');
+}
+
     public function store(Request $request)
     {
         $validated = $request->validate([
