@@ -53,6 +53,19 @@
                 <p class="empty">No books added yet.</p>
             @endforelse
         </div>
+                </div>
+
+        <p class="book-total">
+            @if($status)
+                Showing <strong>{{ $books->count() }}</strong>
+                {{ \Illuminate\Support\Str::plural('book', $books->count()) }}
+                in {{ ucwords(str_replace('_', ' ', $status)) }}
+            @else
+                Total books: <strong>{{ $books->count() }}</strong>
+            @endif
+        </p>
+
+    </main>
 
     </main>
 

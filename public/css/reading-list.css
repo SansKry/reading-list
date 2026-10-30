@@ -92,7 +92,18 @@ body {
     margin-bottom: 2.5rem;
 }
 .toolbar { scroll-margin-top: 1.5rem; }
-
+.book-total {
+    margin: 2.5rem auto 0;
+    padding: 0.6rem 1.5rem;
+    width: fit-content;
+    text-align: center;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--butter);
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+}
+.book-total strong { font-size: 1.1rem; }
 .filters {
     display: flex;
     flex-wrap: wrap;
