@@ -1,44 +1,48 @@
-
-
 @section('content')
 
-<h1>Edit Book</h1>
+<link rel="stylesheet" href="{{ asset('css/reading-list.css') }}">
 
-<form action="{{ route('books.update', $book) }}" method="POST">
-    @csrf
-    @method('PUT')
+<div class="form-page">
+    <h1 class="page-title">Edit Book</h1>
 
-    <label>Title:</label>
-    <input type="text" name="title" value="{{ old('title', $book->title) }}">
-    @error('title')
-        <p>{{ $message }}</p>
-    @enderror
+    <form class="form-card" action="{{ route('books.update', $book) }}" method="POST">
+        @csrf
+        @method('PUT')
 
-    <br><br>
+        <div class="field">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="{{ old('title', $book->title) }}">
+            @error('title')
+                <p class="error">{{ $message }}</p>
+            @enderror
+        </div>
 
-    <label>Author:</label>
-    <input type="text" name="author" value="{{ old('author', $book->author) }}">
-    @error('author')
-        <p>{{ $message }}</p>
-    @enderror
+        <div class="field">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="{{ old('author', $book->author) }}">
+            @error('author')
+                <p class="error">{{ $message }}</p>
+            @enderror
+        </div>
 
-    <br><br>
+        <div class="field">
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+    <option value="to_read" {{ old('status', $book->status) == 'to_read' ? 'selected' : '' }}>To Read</option>
+    <option value="reading" {{ old('status', $book->status) == 'reading' ? 'selected' : '' }}>Reading</option>
+    <option value="finished" {{ old('status', $book->status) == 'finished' ? 'selected' : '' }}>Finished</option>
+</select>
+            @error('status')
+                <p class="error">{{ $message }}</p>
+            @enderror
+        </div>
 
-    <label>Status:</label>
-    <select name="status">
-        <option value="To read" {{ old('status', $book->status) == 'To read' ? 'selected' : '' }}>To read</option>
-        <option value="Reading" {{ old('status', $book->status) == 'Reading' ? 'selected' : '' }}>Reading</option>
-        <option value="Finished" {{ old('status', $book->status) == 'Finished' ? 'selected' : '' }}>Finished</option>
-    </select>
+        <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Update Book</button>
+        </div>
+    </form>
 
-    @error('status')
-        <p>{{ $message }}</p>
-    @enderror
-
-    <br><br>
-
-    <button type="submit">Update Book</button>
-</form>
-
-<a href="{{ route('books.index') }}">Cancel</a>
-
+    <div class="form-back">
+        <a class="btn btn-soft" href="{{ route('books.index') }}">Cancel</a>
+    </div>
+</div>
