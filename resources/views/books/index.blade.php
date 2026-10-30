@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <title>My Reading List</title>
@@ -6,6 +5,8 @@
 <body>
 
     <h1>My Reading List</h1>
+
+    <a href="{{ route('books.create') }}">Add Book</a>
 
     @forelse($books as $book)
         <div>
